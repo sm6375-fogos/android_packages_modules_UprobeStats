@@ -27,6 +27,14 @@ namespace bpf {
 
 #define KVER(a, b, c) (((a) << 24) + ((b) << 16) + (c))
 
+// Get the kernel version, with optional override via system property.
+// The override is useful for devices where the reported kernel version
+// doesn't match the actual BPF capabilities (e.g., backported features).
+//
+// To override the kernel version, set the ro.bpf.kver_override property
+// to the desired version in MAJOR.MINOR.PATCH format (e.g., "5.4.0").
+//
+// For SM6375 devices, see README_SM6375.md for configuration details.
 static inline unsigned uncachedKernelVersion() {
     struct utsname buf;
     if (uname(&buf)) return 0;
