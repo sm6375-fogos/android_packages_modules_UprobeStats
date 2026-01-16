@@ -103,8 +103,8 @@ Look for messages related to kernel version checking in the BPF loader.
 ### When is the Override Applied?
 
 The override is checked during:
-1. **BPF Map Creation**: When loading maps with kernel version requirements (see `UprobeStatsBpfLoad.cpp`, lines 607-625)
-2. **BPF Program Loading**: When loading programs with version constraints (see `UprobeStatsBpfLoad.cpp`, lines 783-810)
+1. **BPF Map Creation**: When loading maps with kernel version requirements (see `createMaps()` function in `UprobeStatsBpfLoad.cpp`)
+2. **BPF Program Loading**: When loading programs with version constraints (see `loadCodeSections()` function in `UprobeStatsBpfLoad.cpp`)
 
 ### Kernel Version Format
 
@@ -163,7 +163,7 @@ When setting the override version for SM6375, consider these typical capabilitie
 
 ## Building for SM6375
 
-When building FogOS or LineageOS for SM6375 devices with this module:
+When building custom ROMs (LineageOS, FogOS, etc.) for SM6375 devices with this module:
 
 1. Add the property to your device tree
 2. Build the system/vendor image
@@ -172,13 +172,13 @@ When building FogOS or LineageOS for SM6375 devices with this module:
 
 ## References
 
-- Main implementation: `/src/bpf/headers/include/bpf/KernelUtils.h`
-- BPF loader: `/src/bpfloader/UprobeStatsBpfLoad.cpp`
-- Map definitions: `/src/bpf/headers/include/bpf_map_def.h`
+- Main implementation: `src/bpf/headers/include/bpf/KernelUtils.h`
+- BPF loader: `src/bpfloader/UprobeStatsBpfLoad.cpp`
+- Map definitions: `src/bpf/headers/include/bpf_map_def.h`
 
 ## Credits
 
-This kernel version override functionality is part of the Android BPF loader implementation and has been adapted for the SM6375 platform in the FogOS project.
+This kernel version override functionality is part of the Android BPF loader implementation and has been documented for the SM6375 platform.
 
 ## Support
 

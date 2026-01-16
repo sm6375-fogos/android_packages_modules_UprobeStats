@@ -102,7 +102,7 @@ See the detailed documentation in [README_SM6375.md](README_SM6375.md)
 
 ## For ROM Developers
 
-If you're building FogOS, LineageOS, or another custom ROM for SM6375:
+If you're building LineageOS or another custom ROM for SM6375:
 
 1. Add the override to `device/manufacturer/codename/device.mk`
 2. Or create a `device/manufacturer/codename/vendor.prop` entry
