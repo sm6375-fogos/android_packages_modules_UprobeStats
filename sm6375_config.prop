@@ -1,0 +1,49 @@
+# Example System Properties for SM6375 Devices
+#
+# This file demonstrates how to configure the BPF kernel version override
+# for Qualcomm SM6375-based devices (Moto G82, Moto G72, etc.)
+#
+# Copy relevant lines to your device's system.prop, vendor.prop, or device.mk
+
+# =============================================================================
+# BPF KERNEL VERSION OVERRIDE
+# =============================================================================
+# Override the detected kernel version for BPF program/map loading
+# Format: MAJOR.MINOR.PATCH (e.g., 5.4.0, 5.10.0)
+#
+# SM6375 devices typically run kernel 5.4.x
+# Set this to match your actual kernel capabilities
+ro.bpf.kver_override=5.4.0
+
+# =============================================================================
+# NOTES FOR SM6375 INTEGRATION
+# =============================================================================
+#
+# 1. Verify your actual kernel version first:
+#    adb shell uname -r
+#
+# 2. For devices with 5.4 kernel (most common for SM6375):
+#    ro.bpf.kver_override=5.4.0
+#
+# 3. For devices with 5.10 kernel (newer builds):
+#    ro.bpf.kver_override=5.10.0
+#
+# 4. For devices with custom kernels with backported features:
+#    Set the version that matches the backported capabilities
+#
+# 5. This property must be set at build time (ro. prefix = read-only)
+#    Add to device.mk, system.prop, or vendor.prop in your device tree
+#
+# =============================================================================
+# EXAMPLE DEVICE CONFIGURATIONS
+# =============================================================================
+#
+# Moto G82 (rhode) - Typical configuration:
+# ro.bpf.kver_override=5.4.0
+#
+# Moto G72 (austin) - Typical configuration:
+# ro.bpf.kver_override=5.4.0
+#
+# Other SM6375 devices - Verify kernel version and adjust accordingly
+#
+# =============================================================================
