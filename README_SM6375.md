@@ -102,9 +102,7 @@ Look for messages related to kernel version checking in the BPF loader.
 
 ### When is the Override Applied?
 
-The override is checked during:
-1. **BPF Map Creation**: When loading maps with kernel version requirements (see `createMaps()` function in `UprobeStatsBpfLoad.cpp`)
-2. **BPF Program Loading**: When loading programs with version constraints (see `loadCodeSections()` function in `UprobeStatsBpfLoad.cpp`)
+The override is checked during BPF map creation and program loading. The kernel version is determined early in the boot process and cached for the lifetime of the system. When maps or programs are loaded, they may specify minimum and maximum kernel version requirements, which are checked against the (possibly overridden) kernel version.
 
 ### Kernel Version Format
 
@@ -172,9 +170,9 @@ When building custom ROMs (LineageOS, FogOS, etc.) for SM6375 devices with this 
 
 ## References
 
-- Main implementation: `src/bpf/headers/include/bpf/KernelUtils.h`
-- BPF loader: `src/bpfloader/UprobeStatsBpfLoad.cpp`
-- Map definitions: `src/bpf/headers/include/bpf_map_def.h`
+- Main implementation: [src/bpf/headers/include/bpf/KernelUtils.h](./src/bpf/headers/include/bpf/KernelUtils.h)
+- BPF loader: [src/bpfloader/UprobeStatsBpfLoad.cpp](./src/bpfloader/UprobeStatsBpfLoad.cpp)
+- Map definitions: [src/bpf/headers/include/bpf_map_def.h](./src/bpf/headers/include/bpf_map_def.h)
 
 ## Credits
 

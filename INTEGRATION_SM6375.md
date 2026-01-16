@@ -137,7 +137,7 @@ Change-Id: I... (gerrit will add this)
 
 ## References
 
-- Main documentation: [README_SM6375.md](README_SM6375.md)
-- Example config: [sm6375_config.prop](sm6375_config.prop)
-- Makefile snippet: [sm6375_uprobestats.mk](sm6375_uprobestats.mk)
-- Implementation: [src/bpf/headers/include/bpf/KernelUtils.h](src/bpf/headers/include/bpf/KernelUtils.h)
+- Main documentation: [README_SM6375.md](./README_SM6375.md)
+- Example config: [sm6375_config.prop](./sm6375_config.prop)
+- Makefile snippet: [sm6375_uprobestats.mk](./sm6375_uprobestats.mk)
+- Implementation: [src/bpf/headers/include/bpf/KernelUtils.h](./src/bpf/headers/include/bpf/KernelUtils.h)
